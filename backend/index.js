@@ -1,5 +1,7 @@
 const express = require('express')
 const mongoose = require('mongoose')
+const potholeRoutes = require('./routes/potholeRoutes')
+
 const app = express()
 
 //Server Configuration
@@ -29,6 +31,8 @@ app.use((err, req, res, next) => {
   console.log('Error:', err)
   res.status(500).json({error: 'Internal Server Error'})
 })
+
+app.use('/api/potholes', potholeRoutes)
 
 //Creating server
 app.listen(PORT, () => {
