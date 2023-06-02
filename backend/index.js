@@ -1,8 +1,18 @@
 const express = require('express')
+const bodyParser = require('body-parser')
+
 const app = express()
 
+app.use(bodyParser.urlencoded({extended: true}))
+
+app.use(bodyParser.json())
+
 app.get('/', (req, res) => {
-    res.send("App is working")
+    res.json({'message': "App is working"})
 })
 
-app.listen(console.log('App is running on port ' + 3000))
+let PORT = 3000
+
+app.listen(PORT, () => {
+    console.log(`Server is listening on port ${PORT}`)
+})
