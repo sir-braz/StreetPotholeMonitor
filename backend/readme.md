@@ -77,5 +77,3 @@ GET /potholes?radius=1000
 ## Final Remarks
 
 The Road Pothole Geolocation API is a powerful tool to assist in pothole identification and maintenance. Make sure to provide all the necessary information when using the endpoints and follow the specified conventions to achieve the best results.
-
-This documentation is just a basic overview of the API. For more detailed and advanced information, please refer to the complete documentation at [link to full documentation].
