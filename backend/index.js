@@ -1,35 +1,36 @@
 const express = require('express')
-const bodyParser = require('body-parser')
 const mongoose = require('mongoose')
-
-YOUR_MONGODB_URL = 'mongodb+srv://root:root@cluster0.i8a2ejt.mongodb.net/'
-
-mongoose.Promise = global.Promise;
-mongoose.connect(YOUR_MONGODB_URL, 
-    {
-      useNewUrlParser: true,
-    }
-  )
-  .then(() => {
-    console.log("Successfully connected to the database");
-  })
-  .catch((err) => {
-    console.log("Could not connect to the database. Error...", err);
-    process.exit();
-  });
-
 const app = express()
 
-app.use(bodyParser.urlencoded({extended: true}))
+//Server Configuration
+const PORT = process.env.PORT || 3000;
+const MONGODB_URL = 'mongodb+srv://root:root@cluster0.i8a2ejt.mongodb.net/'
 
-app.use(bodyParser.json())
+//MongoDb Connection
+mongoose.Promise = global.Promise
+mongoose.connect(MONGODB_URL, 
+  {
+    useNewUrlParser: true,
+  }
+)
+.then(() => {
+  console.log("Successfully connected to the database");
+})
+.catch((err) => {
+  console.log("Could not connect to the database. Error...", err);
+  process.exit();
+});
 
-app.get('/', (req, res) => {
-    res.json({'message': "App is working"})
+//Configure middleware
+app.use(express.json())
+
+//Global Error Handling
+app.use((err, req, res, next) => {
+  console.log('Error:', err)
+  res.status(500).json({error: 'Internal Server Error'})
 })
 
-let PORT = 3000
-
+//Creating server
 app.listen(PORT, () => {
-    console.log(`Server is listening on port ${PORT}`)
+  console.log(`Server is listening on port ${PORT}`)
 })
