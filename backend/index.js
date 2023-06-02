@@ -1,5 +1,22 @@
 const express = require('express')
 const bodyParser = require('body-parser')
+const mongoose = require('mongoose')
+
+YOUR_MONGODB_URL = 'mongodb+srv://root:root@cluster0.i8a2ejt.mongodb.net/'
+
+mongoose.Promise = global.Promise;
+mongoose.connect(YOUR_MONGODB_URL, 
+    {
+      useNewUrlParser: true,
+    }
+  )
+  .then(() => {
+    console.log("Successfully connected to the database");
+  })
+  .catch((err) => {
+    console.log("Could not connect to the database. Error...", err);
+    process.exit();
+  });
 
 const app = express()
 
