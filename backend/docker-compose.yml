@@ -1,15 +1,21 @@
-version: '3.8'
-
+version: '3'
 services:
+  backend:
+    build: .
+    ports:
+      - '3000:3000'
+    environment:
+      - PORT=3000
+      - MONGODB_URL=mongodb+srv://root:root@cluster0.i8a2ejt.mongodb.net/
+    depends_on:
+      - mongodb
+
   mongodb:
     image: mongo
     ports:
-      - 27017:27017
-    environment:
-      - MONGO_INITDB_ROOT_USERNAME=root  # MongoDB root username
-      - MONGO_INITDB_ROOT_PASSWORD=root  # MongoDB root password
+      - '27017:27017'
     volumes:
-      - mongodb_data:/data/db  # Mount a volume to persist MongoDB data
+      - mongodb_data:/data/db
 
 volumes:
-  mongodb_data:  # Define the volume for MongoDB data
+  mongodb_data:
