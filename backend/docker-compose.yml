@@ -1,0 +1,15 @@
+version: '3.8'
+
+services:
+  mongodb:
+    image: mongo
+    ports:
+      - 27017:27017
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=root  # MongoDB root username
+      - MONGO_INITDB_ROOT_PASSWORD=root  # MongoDB root password
+    volumes:
+      - mongodb_data:/data/db  # Mount a volume to persist MongoDB data
+
+volumes:
+  mongodb_data:  # Define the volume for MongoDB data
