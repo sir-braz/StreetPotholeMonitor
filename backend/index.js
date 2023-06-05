@@ -32,7 +32,7 @@ app.use((err, req, res, next) => {
   res.status(500).json({error: 'Internal Server Error'})
 })
 
-app.use('/api/potholes', potholeRoutes)
+app.use('/', potholeRoutes)
 
 //Creating server
 app.listen(PORT, () => {
