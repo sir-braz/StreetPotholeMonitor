@@ -12,7 +12,7 @@ exports.reportPothole = async (req, res, next) => {
         })
         //Save the pothole to the database
         const savedPothole = await pothole.save()
-        res.status(200).json({error: 'OK!'})
+        res.status(200).json({error: 'Pothole reported successfully.'})
     }catch(err){
         console.log(err)
         res.status(500).json({'message': 'Error reporting'})
