@@ -85,19 +85,3 @@ Contributions are welcome! If you would like to contribute to the Street Pothole
 5. Submit a pull request to the main repository.
 
 Please ensure that your code follows the project's coding style and includes appropriate tests.
-
-### Development Setup
-
-1. Clone the repository:
-
-   ```bash
-    - git clone https://github.com/your-username/street-pothole-monitor.git
-   
-    - cd street-pothole-monitor
-
-    - npm install
-
-    - npm start
-
-    - sudo docker-compose up
-
