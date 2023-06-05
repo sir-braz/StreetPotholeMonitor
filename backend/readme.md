@@ -74,6 +74,30 @@ GET /potholes?radius=1000
   }
   ```
 
-## Final Remarks
+## Contributing
 
-The Road Pothole Geolocation API is a powerful tool to assist in pothole identification and maintenance. Make sure to provide all the necessary information when using the endpoints and follow the specified conventions to achieve the best results.
+Contributions are welcome! If you would like to contribute to the Street Pothole Monitor project, please follow these steps:
+
+1. Fork the repository.
+2. Create a new branch for your feature or bug fix.
+3. Make your changes and commit them.
+4. Push your changes to your forked repository.
+5. Submit a pull request to the main repository.
+
+Please ensure that your code follows the project's coding style and includes appropriate tests.
+
+### Development Setup
+
+1. Clone the repository:
+
+   ```bash
+    - git clone https://github.com/your-username/street-pothole-monitor.git
+   
+    - cd street-pothole-monitor
+
+    - npm install
+
+    - npm start
+
+    - sudo docker-compose up
+
