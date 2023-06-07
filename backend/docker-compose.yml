@@ -4,7 +4,7 @@ services:
     build: .
     container_name: pothole-backend
     ports:
-      - '3000:3000'
+      - '8080:80'
     environment:
       - PORT=3000
       - MONGODB_URL=mongodb+srv://root:root@cluster0.i8a2ejt.mongodb.net/
@@ -15,7 +15,7 @@ services:
     image: mongo
     container_name: mongodb
     ports:
-      - '27017:27017'
+      - '27018:27017'
     volumes:
       - mongodb_data:/data/db
 
