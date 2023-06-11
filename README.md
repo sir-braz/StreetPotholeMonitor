@@ -1,6 +1,6 @@
 # Street Pothole
 
-- The Porhole API helps municipalities locate and address road potholes. Users can report potholes, and the API provides real-time Geolocation data for efficient maintenance. Enhancing road safety for all.
+- The Pothole API helps municipalities locate and address road potholes. Users can report potholes, and the API provides real-time Geolocation data for efficient maintenance. Enhancing road safety for all.
 
 
 
